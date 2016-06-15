@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login to the Wall</title>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery-ui.css') }}">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script>
+            $(function() {
+                $( "#tabs" ).tabs();
+            });
+        </script>
+</head>
+<body>
+      <div id="tabs">
+        <ul>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#register">Register</a></li>
+        </ul>
+        <div id="login">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form action="/login" method="post">
+                Email: <input type='text' name='email'><br>
+                Password: <input type='password' name='password'><br>
+                <input type='submit' value='submit'>
+            </form>
+        </div>
+        <div id="register">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form action='/reg' method='post'>
+                Email: <input type='text' name='email'><br>
+                Username: <input type='text' name='username'><br>
+                Password: <input type='password' name='password'><br>
+                Confirmation pasword: <input type='password' name='confirm'><br>
+                <input type='submit' value='submit'>
+            </form>
+        </div>
+       </div>
+</body>
+</html>

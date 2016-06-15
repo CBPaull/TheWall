@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Wall</title>
+</head>
+<body>
+<div class="'header">
+
+</div>
+{% for messages %}
+<div class="message">
+<!-- show a message -->
+<!--buttons to show comments, edit  or delete message-->
+    {% for comment where message_id = message.id %}
+    <div class="comment">
+        <!-- show a comment -->
+        <!--buttons to edit or delete comment-->
+    </div>
+</div>
+{% endfor %}
+</body>
+</html>

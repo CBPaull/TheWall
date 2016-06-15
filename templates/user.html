@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile for the Wall</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery-ui.css') }}">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+</head>
+<body>
+<div class="header">
+
+</div>
+<div class="userinfo">
+    <form>
+        <table>
+            <thead>
+                <tr><th class="col1"></th><th class="col2">Your Profile</th><th class="col3"></th></tr>
+            </thead>
+                <tr><td>Username</td><td>{{ username }}</td><td class="col3"><input type="text" name="username"></td></tr>
+                <tr><td>Email</td><td>{{ email }}</td><td class="col3"><input type="text" name="email"></td></tr>
+                <tr><td>First Name</td><td>{{ first_name }}</td><td class="col3"><input type="text" name="first_name"></td></tr>
+                <tr><td>Last Name</td><td>{{ last_name }}</td><td class="col3"><input type="text" name="last_name"></td></tr>
+
+        </table>
+        <input type="submit" value="update">
+    </form>
+    <button class="pwbutton">cliick to edit your password</button>
+    <form class="pwedit">
+        <table>
+                <tr><td>Input your old password</td><td><input type="password" name="old password"></td></tr>
+                <tr><td>Input your new password</td><td><input type="password" name="new_password"></td></tr>
+                <tr><td>Confirm your new password</td><td><input type="password" name="new_confirm"></td></tr>
+
+        </table>
+    </form>
+</div>
+</body>
+</html>
